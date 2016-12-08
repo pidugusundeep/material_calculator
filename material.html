@@ -1,0 +1,166 @@
+<html>
+<head>
+<script src="https://code.getmdl.io/1.1.1/material.min.js"></script>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.1/material.indigo-pink.min.css">
+    <!-- Material Design icon font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<style>
+	body {
+	  background: #cccccc;
+	}
+	#opscreen{
+		background-color:white;
+	}
+	a{
+		text-decoration:none;
+	}
+</style>
+</head>
+<body>
+<table  align="Center">
+	<h1 align="Center" style="font-size:40 !important";>Calculator</h1>
+	<tr>
+		<td colspan="4" height="30px" id="opscreen" margin="1px" ></td>
+	</tr>
+	<tr>
+		<td><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" value="clean" onclick="preview(13)">AC</button></td>
+		<td><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--colored" id="0" value="pov" onclick="preview(15)">pov</button></td>
+		<td><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--colored" id="0" value="0" onclick="preview(0)">0</button></td>
+		<td><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--colored" id="/" value="div" onclick="preview(14)">/</button></td>
+	</tr>
+	<tr>
+		<td><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--colored" id="1" value="1" onclick="preview(1)">1</button></td>
+		<td><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--colored" id="2" value="2" onclick="preview(2)">2</button></td>
+		<td><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--colored" id="3" value="3" onclick="preview(3)">3</button></td>
+		<td><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--colored" id="*" value="mul" onclick="preview(10)">*</button></td>
+	</tr>
+	<tr>
+		<td><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--colored" id="4" value="4" onclick="preview(4)">4</button></td>
+		<td><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--colored" id="5" value="5" onclick="preview(5)">5</button></td>
+		<td><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--colored" id="6" value="6" onclick="preview(6)">6</button></td>
+		<td><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--colored" id="+" value="add" onclick="preview(11)">+</button></td>
+	</tr>
+	<tr>
+		<td><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--colored" id="7" value="7" onclick="preview(7)">7</button></td>
+		<td><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--colored" id="8" value="8" onclick="preview(8)">8</button></td>
+		<td><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--colored" id="9" value="9" onclick="preview(9)">9</button></td>
+		<td><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--colored" id="-" value="sub" onclick="preview(12)">-</button></td>
+	</tr>
+	
+</table><br></br>
+<center><h6><a href="http://pidugusundeep.in/">Pidugu Sundeep</a><h6> </center>
+<script type="text/javascript">
+	
+		var one = Number(document.getElementById("1").value);
+		var two = Number(document.getElementById("2").value);
+		var three = Number(document.getElementById("3").value);
+		var four = Number(document.getElementById("4").value);
+		var five = Number(document.getElementById("5").value);
+		var six = Number(document.getElementById("6").value);
+		var seven = Number(document.getElementById("7").value);
+		var eight = Number(document.getElementById("8").value);
+		var nine = Number(document.getElementById("9").value);
+		var zero = Number(document.getElementById("0").value);
+		var add = document.getElementById("+").value;
+		var sub = document.getElementById("-").value;
+		var mul = document.getElementById("*").value;
+		var div = document.getElementById("/").value;
+		var sum = 0;
+		var a,b,c;
+		var eval=[Number(a),Number(b),Number(c)];
+		var i=0;
+		var j;
+		var k=0;
+	
+		
+	function preview(grab){
+		grab = Number(grab);
+		
+		if(i == 0){
+			console.log("value of i is"+i);
+			eval[0] = grab;
+			console.log("value of eval[0] is"+eval[0]);
+			j=0;
+		}
+		if(i == 1){
+			console.log("value of i is"+i);
+			
+			eval[1] = grab;
+			console.log("value of eval[1] is"+eval[1]);
+			j=0;
+		}
+		if(i == 2){
+			console.log("value of i is"+i);
+			eval[2] = grab;
+			console.log("value of eval[2] is"+eval[2]);
+	//	}
+	//	if(i>2){
+	//		alert("in else loop");
+			if(eval[1] == 10){
+				console.log("in the multiplication");
+				sum = eval[0]*eval[2];
+				document.getElementById("opscreen").innerHTML = sum;
+				eval[0] = sum;
+			}
+			if(eval[1] == 11){
+				sum = eval[0]+eval[2];
+				document.getElementById("opscreen").innerHTML = sum;
+				eval[0] = sum;
+			}
+			if(eval[1] == 12){
+				sum = eval[0]-eval[2];
+				document.getElementById("opscreen").innerHTML = sum;
+				eval[0] = sum;
+			}
+			if(eval[1] == 14){
+				sum = eval[0]/eval[2];
+				document.getElementById("opscreen").innerHTML = sum;
+				eval[0] = sum;
+			}
+			if(eval[1] == 15){
+				sum = Math.pow(eval[0],eval[2]);
+				document.getElementById("opscreen").innerHTML = sum;
+				eval[0] = sum;
+			}
+			i=0;
+			j=1;
+		}
+		i
+		if(grab == 10){
+			grab = "*";
+		}
+		if(grab == 11){
+			grab = "+";
+		}
+		if(grab == 12){
+			grab = "-";
+		}
+		if(grab == 14){
+			grab = "/";
+		}
+		if(grab == 15){
+			grab = "(pov)";
+		}
+		
+		
+		if(grab == 13){
+			sum = 0;
+			i=-1;
+			grab = "";
+			document.getElementById("opscreen").innerHTML = "";
+		}
+		
+		if(j != 1)
+		{
+		document.getElementById("opscreen").innerHTML += grab;
+		j=0;
+		}
+		i++;
+		console.log("value of j is "+j);
+		k++;
+		
+	
+}
+</script>
+</body>
+</html>
